@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caculator</title>
+</head>
+<body>
+    <!-- calculator with pop-up box -->
+    <script>
+        a=prompt("Enter first number");
+        b=prompt("Enter second number");
+
+        c=prompt("enter the arithematic operator");
+
+        switch(c){
+            case '+': 
+                    alert(parseInt(a)+parseInt(b));
+                    break;
+            case '-': 
+                    alert(parseInt(a)-parseInt(b));
+                    break;
+            case '*': 
+                    alert(parseInt(a)*parseInt(b));
+                    break;
+            case '/': 
+                    alert(parseInt(a)/parseInt(b));
+                    break;
+            defalut : 
+                    alert("invalid input");
+        }
+    </script>
+</body>
+</html>

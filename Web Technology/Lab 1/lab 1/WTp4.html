@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci</title>
+</head>
+<body>
+    <!-- to print fibonacci series of number -->
+    <script>
+             a=parseInt(prompt("Enter number"));
+             var f=0; 
+             var s=1;
+             var ans=f+s;
+             alert(f);
+             for(let i=1;i<=a;i++){
+                alert(ans);
+                f=s;
+                s=ans;
+                ans=f+s;
+             }
+    </script>
+</body>
+</html>
