@@ -16,7 +16,13 @@
         var teens=["Ten","Eleven","Tweleve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
         var tens=["Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
         var result="";
-        
+        if(a>=100){
+            result=result+units[(a/100)+1]+"Hundered";
+            a=a%100;
+        }
+        if(a>20){
+            result=result+tens[(a/10)-2];
+        }
     }
    </script> 
 </body>
