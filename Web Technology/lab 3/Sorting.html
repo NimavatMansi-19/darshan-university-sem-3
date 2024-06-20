@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+</head>
+<body>
+    <script>
+    var n=parseInt(prompt("Enter the size of array"));
+    var a = [];
+    for(i=0;i<n;i++){
+        a[i]=parseInt(prompt("Enter the value in array:"+i));
+        }
+       
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+        if(a[i]>a[j]){
+            var temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+        }
+
+    }
+    for(i=0;i<n;i++){
+        document.write(a[i]);
+
+    }
+    </script>
+</body>
+</html>
