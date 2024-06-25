@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        students=[101,'Mansi','Cse','A'];
+        document.write("<table border=1>");
+            for(i=0;i<students.length;i++){
+                document.write("<tr>");
+                    document.write("<td>"+students[i]+"</td>");
+                    document.write("</tr>");
+            }
+            stu1={
+                name:"Mansi",
+                age:18,
+                batch:"1st",
+                mobile:1234567891
+
+            }
+            stu2={
+                name:"Darshi",
+                age:18,
+                batch:"7th",
+                mobile:134567891
+
+            }
+            stu=[stu1,stu2];
+            document.write("<table border=1>");
+                for(i=0;i<stu.length;i++){
+                    document.write("<tr>");
+                    document.write("<td>"+stu[i].name+"</td>");
+                    document.write("<td>"+stu[i].age+"</td>");
+                    document.write("<td>"+stu[i].batch+"</td>");
+                    document.write("<td>"+stu[i].mobile+"</td>");
+                    document.write("</tr>");
+                }
+    </script>
+</body>
+</html>
