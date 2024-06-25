@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+    <form>
+        <div class="output">
+        <input type="text" id="panel" name="Answerpanel">
+    </div> 
+    <div>
+        <input type="button" value="AC" onclick="Answerpanel.value=''">
+        <input type="button" value="C" onclick="Answerpanel.value=''">
+        <input type="button" value="%" onclick="Answerpanel.value+='%'">
+        <input type="button" value="/" onclick="Answerpanel.value+='/'">
+    </div>
+    <div>
+        <input type="button" value="7" onclick="Answerpanel.value+='7'">
+        <input type="button" value="8" onclick="Answerpanel.value+='8'">
+        <input type="button" value="9" onclick="Answerpanel.value+='9'">
+        <input type="button" value="*" onclick="Answerpanel.value+='*'">
+    </div>
+    <div>
+        <input type="button" value="4" onclick="Answerpanel.value+='4'">
+        <input type="button" value="5" onclick="Answerpanel.value+='5'">
+        <input type="button" value="6" onclick="Answerpanel.value+='6'">
+        <input type="button" value="-" onclick="Answerpanel.value+='-'">
+    </div>
+    <div>
+        <input type="button" value="1" onclick="Answerpanel.value+='1'">
+        <input type="button" value="2" onclick="Answerpanel.value+='2'">
+        <input type="button" value="3" onclick="Answerpanel.value+='3'">
+        <input type="button" value="+" onclick="Answerpanel.value+='+'">
+    </div>
+    <div>
+        <input type="button" value="00" onclick="Answerpanel.value+='00'">
+        <input type="button" value="0" onclick="Answerpanel.value+='0'">
+        <input type="button" value="Back" onclick="Back()">
+        <input type="button" value="=" onclick="Equals()">
+    </div>
+
+
+
+    
+    </form>
+</div>
+    <script>
+        function Equals(){
+       let ans=document.getElementById("panel")
+       let b=ans.value
+        
+        for(let i=0;i<b.length;i++){
+            if(b.charAt(i)=='+'){
+                c=b.split('+');
+                let m=parseInt(c[0]);
+                let n=parseInt(c[1]);
+                ans.value=(m+n);
+            }
+            if(b.charAt(i)=='-'){
+                c=b.split('-');
+                let m=parseInt(c[0]);
+                let n=parseInt(c[1]);
+                ans.value=(m-n);
+            }
+            if(b.charAt(i)=='*'){
+                c=b.split('*');
+                let m=parseInt(c[0]);
+                let n=parseInt(c[1]);
+                ans.value=(m*n);
+            }
+            
+            if(b.charAt(i)=='/'){
+                c=b.split('/');
+                let m=parseInt(c[0]);
+                let n=parseInt(c[1]);
+                ans.value=(m/n);
+            }
+            if(b.charAt(i)=='%'){
+                c=b.split('%');
+                let m=parseInt(c[0]);
+                let n=parseInt(c[1]);
+                ans.value=(m%n);
+            }
+            
+            
+            
+        }
+        }
+        function Back(){
+            let ans=document.getElementById("panel")
+                let b=ans.value
+            ans.value=b.substring(0,b.length-1)
+        }
+    </script>
+</body>
+</html>
