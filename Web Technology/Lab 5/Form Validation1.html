@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<fieldset align="center">
+		<h1>Student Registration</h1>
+		<form>
+		<table cellpadding="20" align="center">
+			<tr>
+				<td>Full Name</td>
+				<td><input type="text" id="name1">
+				</td>
+				<!-- <span id="msg" style="color: red;"></span> -->
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" id="email">
+				</td>
+			</tr>
+			<tr>
+				<td>Mobile No.</td>
+				<td><input type="Number" id ="contact">
+				</td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><textarea></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Nationality</td>
+				<td><input type="text" id="nation">
+				</td>
+			</tr>
+			<tr>
+				<td>Date Of Birth</td>
+				<td><input type="Date">
+				</td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td> <input type="radio" name="a">Male  <input type="radio" name="a">Female 
+				</td>
+			</tr>
+			<tr>
+				<td>Highest Degree</td>
+				<td><select name="select degree">
+					<option selected disabled>Select Degree</option>
+					<option value="Btech">Btech</option>
+					<option value="Bsc">Bsc</option>
+					<option value="Bcom">Bcom</option>
+					<option value="Mtech">Mtech</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>CPI</td>
+				<td><input type="text" id="cpi"></td>
+			</tr>
+			<tr>
+				<td>University</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>Passing Year</td>
+				<td><select name="Passing year">
+                     <option selected disabled>select passing year</option>
+					<option value="2023">2023</option>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+				</select>
+				</td>
+			</tr>
+	    </table>
+	    <button onclick="validation()">Submit</button>
+	    <input type="Reset">
+	</form>
+	</feildset>
+	<script>
+		
+		 function validation(){
+        let a=document.getElementById("email").value;
+        let b=document.getElementById("name1").value;
+        let c=document.getElementById("contact").value;
+        let pattern=/\s*[a-zA-Z0-9]+\@[a-zA-z]+\.[a-zA-Z]{1,}/;
+        let p2=/[a-zA-z]{1,}/;
+        let mob=/[0-9]{10}/;
+        let regex=new RegExp(pattern);
+        let regex1=new RegExp(p2);
+        let regex2=new RegExp(mob);
+      
+        if(regex.test(a) && regex1.test(b) && regex2(c)){
+           
+        }
+        else{
+		alert("Invalid fomate Entered:");
+        }
+    }
+	</script>
+
+</body>
+</html>
