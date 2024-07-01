@@ -2,16 +2,20 @@ import java.util.Scanner;
 
 class Menu{
     int top=-1;
-    int max=5;
-    int[] stack=new int[max];
+    int max;
+    int[] stack;
+    Menu(int max){
+        this.max=max;
+        stack=new int[max];
+    }
     public void Push(int x){
-        if(top>=max){
+        if(top>=max-1){
             System.out.println("Stack OverFlow...");
         }else{
             top++;
             stack[top]=x;
         }
-        displaystack();
+       
     }
     public int Pop(){
         if(top<=-1){
@@ -30,18 +34,20 @@ class Menu{
         else{
            System.out.println(stack[top-I+1]);
         }
+       
     }
     public void Change(int i,int X){
         if(top-i+1<=-1){
-            System.out.println("Stack overflow...");
+            System.out.println("Stack underflow...");
         }
         else{
             stack[top-i+1]=X;
         }
+       
     }
     public void displaystack(){
         for(int i=0;i<=top;i++){
-        System.out.println(stack[i]);
+        System.out.print(stack[i]);
         }
         
     }
@@ -50,13 +56,22 @@ class Menu{
 public class Methods{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Menu m=new Menu();
+        System.out.println("Enter Size  of stack:");
+       int o=sc.nextInt();
+        Menu m=new Menu(o);
+        
+        System.out.println("Enter Elements in stack:");
+       
+        for(int i=0;i<=m.max-1;i++){
+             m.top++;
+            m.stack[i]=sc.nextInt();
+        }
         while (true) {
             System.out.println("Enter 1 to push in the Stack:");
             System.out.println("Enter 2 to pop the Stack:");
             System.out.println("Enter 3 to peep in the Stack:");
             System.out.println("Enter 4 to Change in the Stack:");
-            //System.out.println("Enter 5 to display Stack:");
+            System.out.println("Enter 5 to display Stack:");
             System.out.println("Enter any number to Exit:");
             int a=sc.nextInt();
             if(a==1){
@@ -74,7 +89,10 @@ public class Methods{
                 int i=sc.nextInt();
                 int x=sc.nextInt();
                 m.Change(i, x);
+            }else if(a==5){
+                m.displaystack();
             }
+
             else{
                 break;
             }
