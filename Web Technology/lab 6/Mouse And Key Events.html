@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse and Key events</title>
+</head>
+<body>
+    <button id="changeColor">Submit</button>
+    <input type="text" id="type"/>
+    <button onclick="Change()">Change</button>
+    <script>
+        let a=document.getElementById("changeColor");
+        let body=document.querySelector("body")
+        a.addEventListener("click",()=> {
+             body.style.backgroundColor="black";
+        });
+        a.addEventListener("dblclick",()=> {
+             body.style.backgroundColor="pink";
+        });
+        a.addEventListener("mouseenter",()=> {
+             body.style.backgroundColor="red";
+        });
+        a.addEventListener("mouseout",()=> {
+             body.style.backgroundColor="green";
+        });
+        a.addEventListener("mousemove",()=> {
+             body.style.backgroundColor="orange";
+        });
+        a.addEventListener("mouseover",()=> {
+             body.style.backgroundColor="blue";
+        });
+        
+        function Change(){
+            let input = document.querySelector('input')
+            if(input.type == 'text'){
+                input.type='date'
+            }else{
+                input.type='text'
+            }
+            type!=type;
+        }
+
+
+               
+    </script>
+</body>
+</html>
