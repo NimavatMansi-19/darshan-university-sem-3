@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr1=[1,2,3,4,5]
+        arr2=[6,7,8,9,10]
+       // console.log(...arr1,...arr2)
+       const y=[...arr1,6]
+      // const [a,...rest]=y
+      // console.log(rest)
+      
+        stu={
+            a:1,
+            b:2,
+            c:3
+        }
+        stu1={
+            d:11,
+            e:22,
+            f:33
+        }
+       const new_stu={...stu,...stu1}
+       const new_stu1={...stu1,g:44}
+        // 6. Demonstrate the Array and Object Destructuring. (B)
+        const {e,...rest}=new_stu1
+       console.log(new_stu)
+      console.log(e)
+       console.log(rest)
+      
+       
+      
+    </script>
+</body>
+</html>

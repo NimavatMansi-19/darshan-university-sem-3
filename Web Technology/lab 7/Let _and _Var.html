@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(i=0;i<5;i++){
+            if(i%2==0){
+                let a=i;
+                var b=i;
+                console.log(a);
+            }
+            //let can be accessed within block here a is valid upto if block only
+            //while var is valid within that for loop
+            //console.log(a);
+            console.log(b)
+        }
+    </script>
+</body>
+</html>
