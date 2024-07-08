@@ -88,42 +88,48 @@ class LL{
         Node current = first;
         Node newHead = new Node(current.data);
         Node prev = newHead;
-        System.out.println(prev.data);
+        System.out.print(prev.data+",");
         while(current != null && current.link != null) {
             current = current.link;
             Node newNode = new Node(current.data);
             prev.link = newNode;
             prev = newNode;
-            System.out.print(prev.data);
+            System.out.print(prev.data+",");
         }
         first=first.link;
+        System.err.println();
        System.out.println("List Copied....");
   }
 
     
 
     public void reverse(){
-        if(first==null ||first.link==null){
-            return;
-        }
+        // if(first==null ||first.link==null){
+        //     return;
+        // }
         Node prevNode=first;
         Node curNode=first.link;
         while(curNode!=null){
             Node nextNode=curNode.link;
+            if(prevNode == first){
+                prevNode.link=null;
+            }
             curNode.link=prevNode;
             //update
             prevNode=curNode;
             curNode=nextNode;
         }
-            first.link=null;
+            //first.link=null;
             first=prevNode;
+            System.out.println("Linked_List Reversed---->");
     }
     
     public void displayLL(){
         System.out.print("Your list consists of =>");
-        while (first!=null) {
-            System.out.print(first.data+",");
-        first=first.link;
+        Node temp = first;
+        while (temp!=null) {
+            System.out.print(temp.data+",");
+            temp=temp.link;
         } 
         System.out.println();
     }
@@ -141,8 +147,9 @@ public class Linked_List{
             System.out.println("Enter 4 to Delete");
             System.out.println("Enter 5 to Display List");
             System.out.println("Enter 6 to Display numbers of node present in linked list:");
-            System.out.println("Enter 7 to copy List");
-            System.out.println("Enter 8 to Exit");
+            System.out.println("Enter 7 to Reverse List");
+            System.out.println("Enter 8 to copy list");
+            System.out.println("Enter 9 to Exit");
             int a=sc.nextInt();
             int b;
             
@@ -171,12 +178,14 @@ public class Linked_List{
                 }
                 if(a==6){
                 node1.CountNode();
-                }  
+                }
                 if(a==7){
                     node1.reverse();
                 }
-                
                 if(a==8){
+                    node1.CopyLL();
+                }
+                if(a==9){
                     break;
                 }
         }       
