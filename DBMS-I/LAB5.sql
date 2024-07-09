@@ -61,6 +61,7 @@ SELECT FIRSTNAME FROM STUDENT WHERE CITY NOT LIKE 'B%'
 -----BBBB------
 --1. Display all the students whose name starts from alphabet A or H.
 SELECT FIRSTNAME FROM STUDENT WHERE FIRSTNAME LIKE '[A,H]%'
+SELECT FIRSTNAME FROM STUDENT WHERE FIRSTNAME LIKE '[AH]%'
 
 --2. Display all the students whose name’s second character is vowel and of and start with H.
 SELECT FIRSTNAME FROM STUDENT WHERE FIRSTNAME LIKE 'H[A,E,I,O,U]%'
