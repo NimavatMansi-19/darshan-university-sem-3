@@ -75,7 +75,7 @@ SELECT FIRSTNAME FROM STUDENT WHERE FIRSTNAME NOT LIKE '[A,E,I,O,U]%'
 --5. Display all the students whose website contains .netSELECT FIRSTNAME FROM STUDENT WHERE WEBSITE LIKE '%NET%'SELECT FIRSTNAME FROM STUDENT WHERE WEBSITE LIKE '%.NET%'-----CCCC------1. Display all the students whose address consist of -.
 SELECT FIRSTNAME FROM STUDENT WHERE ADDRESS LIKE '%-%'
 --2. Display all the students whose address contains single quote or double quote.
-SELECT FIRSTNAME FROM STUDENT WHERE ADDRESS LIKE '%''%' OR ADDRESS LIKE '%"%'
+SELECT FIRSTNAME FROM STUDENT WHERE ADDRESS LIKE '%''%''%' OR ADDRESS LIKE '%"%"%'
 
 --3. Display all the students whose website contains @.
 SELECT FIRSTNAME FROM STUDENT WHERE WEBSITE LIKE '%@%'
