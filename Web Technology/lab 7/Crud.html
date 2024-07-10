@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+</head>
+<body>
+    <input type="text" id="name"/>
+    <br>
+    <input type="button" id="submit" value="Add" onclick="AddStudent()">
+    <!-- <input type="button" id="EditAdd" value="EditAdd" onclick="EditStu()"> -->
+    <br>
+    <div id="result">asdf</div>
+    
+    <script>
+        students=["name1","name2","name3","name4","name5","name6","name7"]
+        function Crud(){
+            
+            temp = document.getElementById("result");
+			tempString = "";
+			tempString += "<table border='1'>";
+			for(i=0;i<students.length;i++){
+				tempString += "<tr>";
+				tempString += "<td>"+students[i]+"</td>";
+                tempString += "<td><button onclick='Deletestu("+i+")'>Delete</button></td>";
+                tempString += "<td><button onclick='Updatestu("+i+")'>Edit</button></td>";
+				tempString += "</tr>";
+			}
+			tempString += "</table>";
+            temp.innerHTML = tempString;
+            // document.getElementById('name').value = ""
+
+		}
+        idToEdit = -1;
+		Crud()
+        function AddStudent(){
+             a=document.getElementById("name").value;
+            // temp=document.getElementById("name").value;
+            if(idToEdit>=0){
+					students[idToEdit] = a;
+					idToEdit = -1;
+					document.getElementById('submit').value = "Add";
+                    a = "";
+				}
+				else{
+                    students.push(a);	
+				}
+				
+				
+				Crud();
+                alert("dgf")
+                a = "";
+    }
+        function Deletestu(name){
+			students.splice(name,1);	
+            Crud();
+        }
+        function Updatestu(id){
+            idToEdit = id;
+			document.getElementById('submit').value = "Edit"
+			document.getElementById('name').value = students[id]
+            Crud();   
+             
+        }
+        
+        
+        
+
+       
+    </script>
+</body>
+</html>
