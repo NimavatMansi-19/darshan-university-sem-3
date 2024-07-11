@@ -13,7 +13,7 @@ class Methods{
             top++;
             stack[top]=x;
         }
-        displaystack();
+       
     }
     public char Pop(){
         if(top<=-1){
@@ -31,16 +31,16 @@ class Methods{
         }
         
     }
-    static int i=0;
-   public  char NextChar() {
+//     static int i=0;
+//    public  char NextChar() {
     
-    char next=str.charAt(i);
-    if(i<max){
-        next=str.charAt(i);    
-        i++;  
-    }
-    return next; 
-    }
+//     char next=str.charAt(i);
+//     if(i<max){
+//         next=str.charAt(i);    
+//         i++;  
+//     }
+//     retu//rn next; 
+//     }
     public int Input_Precedence(int n) {
         int f=0;
         if(n=='+' || n=='-'){
@@ -125,11 +125,20 @@ public class Poliish_Notation_Postfix {
         Methods m=new Methods();
         String Polish="";
         int Ranks=0;
-        m.stack[0]='(';
-        char next=m.NextChar();
+        // System.out.println(Ranks);
+        
+        m.Push('(');
+        System.out.println(m.stack[m.top]);
+        System.out.println(m.top);
+        char next;
+        // System.out.println("Next"+next);
         char temp;
-        System.out.println(next);
-        while (next!='\0'){
+        System.out.println("Nextp"+m.Stack_Precedence(m.stack[m.top]));
+        // System.out.println("Nexts"+m.Input_Precedence(next));
+       
+        for(int i=0;i<m.str.length();i++){
+            next=m.str.charAt(i);
+            
             if(m.top<-1){
                 System.out.println("Invalid Strng>>>>");
                 return;
@@ -137,21 +146,25 @@ public class Poliish_Notation_Postfix {
             while (m.Stack_Precedence(m.stack[m.top])>m.Input_Precedence(next)){
                 temp=m.Pop();
                 Polish=Polish+temp;
+                System.out.println(m.Rank(temp));
                 Ranks=Ranks+m.Rank(temp);
+
+                System.out.println("gfhjgfjh"+Ranks);
              
-             if(Ranks<1){
+             if(Ranks<0){
                 System.out.println("Invalidsss");
                 return;
              }
+            } 
              if(m.Stack_Precedence(m.stack[m.top])!=m.Input_Precedence(next)){
                 m.Push(next);
              }else{
                 m.Pop();
              }
             
-             next=m.NextChar();
-            } 
+            
         }
+
         System.out.println(m.top);
         if(m.top!=0 || Ranks!=1 ){
             System.out.println("Invalid");
