@@ -55,16 +55,24 @@ public class Polish_Noatation {
             next=string.charAt(i);
            if(string.charAt(i)>='a' && string.charAt(i)<='z'){
             Polish=Polish+string.charAt(i);
-            System.out.println("hi");
-           }
-           else{
-            Push(next);
-            while (Precedence(next)) {
-                
+           // System.out.println("hi");
+           }else{
+            
+                if(Precedence(Stack[top])<=Precedence(next)){
+                    Push(next);
+                    //System.out.println("hi");
+                }else{
+                    char temp=Pop();
+                    Polish=Polish+temp;
+                   // System.out.println("hel");
+            } 
+            char temp=Pop();
+                Polish=Polish+temp;
             }
-           System.out.println(Stack[top]);
-           }
+            
+           
         }
+        System.out.println(Polish);
     }
      public static void main(String[] args) {
         revpol("a+b*c-d/e*h");
