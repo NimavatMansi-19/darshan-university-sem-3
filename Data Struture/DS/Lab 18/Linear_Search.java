@@ -15,15 +15,22 @@ public class Linear_Search{
         }
         System.out.println("Enter value to be search::");
         int s=sc.nextInt();
+        int ans=Search(s, arr);
+        if(ans==-1){
+            System.out.println("Element not found");
+           }else{
+            System.out.println("Element found at>>>"+ans);
+           }
+    }
+    public static int Search(int s,int[] arr){
         int i=0;
-        while(i!=s){
+        while(i<arr.length){
             if(arr[i]==s){
-                System.out.println("Your value is at index::"+i);
-                break;
+                return  i;
             }  
             i++;
         }
-      
-
+        return  -1;
+        
     }
 }
