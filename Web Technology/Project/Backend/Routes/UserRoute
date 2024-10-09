@@ -1,0 +1,52 @@
+const express = require("express");
+const router = express.Router();
+const student=require("../Models/model");
+
+// Example route
+
+router.post("/",async (req,res)=>{
+    const {name,roll,Standard,Slot,DateOfJoining}=req.body;
+    const data=await student.create({
+        name:name,
+        roll:roll,
+        Standard:Standard,
+        Slot:Slot,
+        DateOfJoining:DateOfJoining
+
+
+    })
+    res.send(data);
+})
+router.get("/",async (req,res)=>{
+    const data=await student.find();
+    res.send(data);
+ })
+ router.get('/:name', async (req, res) => {
+    try {
+        const stuData = await student.findOne({ name: req.params.name });
+        if (!stuData) {
+            return res.status(404).send({ message: 'Student not found' });
+        }
+        res.send(stuData);
+    } catch (error) {
+        console.error('Error fetching student data:', error);
+        res.status(500).send({ message: 'Internal server error' });
+    }
+});
+
+ router.delete('/:name', async (req, res) => {
+        const stuData = await student.deleteOne({ name: req.params.name });
+        res.send({ message: "Record deleted successfully", stuData });
+    
+});
+router.patch('/:name', async (req, res) => {
+        const stuData = await student.findOne({ name: req.params.name });
+        if (req.body.name) stuData.name = req.body.name;
+        if (req.body.roll) stuData.roll = req.body.roll;
+        const ans = await stuData.save();
+        res.send(ans);
+    
+});
+
+
+module.exports = router;
